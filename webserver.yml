@@ -1,0 +1,19 @@
+- name: Configure Arch Linux Web Server
+  hosts: webserver
+  tasks:
+    - name: Update package cache
+      pacman:
+        update_cache: yes
+
+    - name: Install Apache and PHP
+      pacman:
+        name: 
+          - apache
+          - php
+        state: present
+
+    - name: Start and enable Apache service
+      systemd:
+        name: httpd
+        state: started
+        enabled: yes
