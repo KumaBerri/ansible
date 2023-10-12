@@ -1,0 +1,22 @@
+---
+- name: MariaDB
+  hosts: dbSchoolDylan
+  become: yes
+  become_method: sudo
+  become_user: root
+  remote_user: kumaberri
+  gather_facts: true
+  vars:
+    mysql_root_password: "1D@5k"
+  tasks:
+    - name: install mariadb
+      yum:
+        name:
+          - mariadb-server
+          - python3-PyMySQL
+        state: latest
+    - name: start mariadb
+      service:
+        name: mariadb
+        enabled: true
+        state: started
