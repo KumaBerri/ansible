@@ -14,5 +14,5 @@
 
     - name: Clone git repo named ansibleWebsite
       git:
-        repo: https://www.github.com/KumaBerri/ansibleWebsite.git
+        repo: https://www.github.com/serlunaa/ansibleWebsite.git
         dest: /srv/http/github/
